@@ -63,8 +63,8 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
 
-                                "/api/user/signin" // Public endpoints
-
+                                "/api/user/signin", // Public endpoints
+                                "/api/mood/create-mood"
                         ).permitAll() // Allow listed endpoints without authentication
                         .anyRequest().authenticated() // All other endpoints require authentication
                 )

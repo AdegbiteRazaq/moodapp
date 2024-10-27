@@ -1,7 +1,7 @@
 package com.school.sport_enrollment.Service;
 
-import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,6 @@ import com.school.sport_enrollment.Model.User;
 import com.school.sport_enrollment.Repository.SportRepository;
 import com.school.sport_enrollment.Response.BaseResponse;
 import com.school.sport_enrollment.Response.SportResponse;
-import com.school.sport_enrollment.Response.UserResponse;
 import com.school.sport_enrollment.Utils.Helpers;
 
 @Service

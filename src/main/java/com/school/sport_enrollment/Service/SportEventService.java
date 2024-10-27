@@ -1,27 +1,21 @@
 package com.school.sport_enrollment.Service;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.school.sport_enrollment.Dto.SportDto;
 import com.school.sport_enrollment.Dto.SportEventDto;
-import com.school.sport_enrollment.Enums.SportType;
 import com.school.sport_enrollment.Model.Sport;
 import com.school.sport_enrollment.Model.SportEvent;
 import com.school.sport_enrollment.Model.User;
 import com.school.sport_enrollment.Repository.SportEventRepository;
 import com.school.sport_enrollment.Response.BaseResponse;
-import com.school.sport_enrollment.Response.SportResponse;
 import com.school.sport_enrollment.Utils.Helpers;
-
-import java.util.List;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Service
 

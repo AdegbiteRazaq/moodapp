@@ -1,8 +1,6 @@
 package com.school.sport_enrollment.Dto;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class SportEventDto {
 
