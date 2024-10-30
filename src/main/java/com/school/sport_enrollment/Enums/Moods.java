@@ -15,6 +15,14 @@ public enum Moods {
 
     public int getValue() {
         return value;
+    } 
+    public static Moods fromValue(int value) {
+        for (Moods mood : Moods.values()) {
+            if (mood.getValue() == value) {
+                return mood;
+            }
+        }
+        throw new IllegalArgumentException("Invalid Mood value: " + value);
     }
 }
 

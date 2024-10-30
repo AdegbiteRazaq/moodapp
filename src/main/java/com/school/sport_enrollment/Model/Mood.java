@@ -5,8 +5,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import com.school.sport_enrollment.Enums.Moods;
+import com.school.sport_enrollment.Utils.MoodConverter;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,6 +36,7 @@ public class Mood {
     private String location;
 
     @Column(name = "rating")
+    @Convert(converter = MoodConverter.class)
     private Moods rating;
 
     @Column(name = "name")
