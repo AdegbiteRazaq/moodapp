@@ -27,18 +27,18 @@ public class MoodController {
 
     public ResponseEntity<MoodResponse> createMood(@RequestBody MoodDto dto, HttpServletRequest request) {
 
-      
-
         // If the address is IPv6, try to convert it to IPv4
         String ip = request.getHeader("X-Forwarded-For");
-        // If there are multiple IPs in the X-Forwarded-For header, get the first one (original client IP)
+        // If there are multiple IPs in the X-Forwarded-For header, get the first one
+        // (original client IP)
         if (ip != null && !ip.isEmpty()) {
             ip = ip.split(",")[0].trim();
         } else {
             // If X-Forwarded-For is empty, use the remote address
             ip = request.getRemoteAddr();
         }
-        // Check if the IP is the IPv6 localhost (::1) and map it to IPv4 localhost (127.0.0.1)
+        // Check if the IP is the IPv6 localhost (::1) and map it to IPv4 localhost
+        // (127.0.0.1)
         if ("::1".equals(ip)) {
             ip = "127.0.0.1";
         }
@@ -51,16 +51,19 @@ public class MoodController {
         MoodResponse createdMood = moodService.createMood(dto, ip);
         return new ResponseEntity<>(createdMood, createdMood.getStatusCode());
     }
+
     public String getClientIp(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
-        // If there are multiple IPs in the X-Forwarded-For header, get the first one (original client IP)
+        // If there are multiple IPs in the X-Forwarded-For header, get the first one
+        // (original client IP)
         if (ip != null && !ip.isEmpty()) {
             ip = ip.split(",")[0].trim();
         } else {
             // If X-Forwarded-For is empty, use the remote address
             ip = request.getRemoteAddr();
         }
-        // Check if the IP is the IPv6 localhost (::1) and map it to IPv4 localhost (127.0.0.1)
+        // Check if the IP is the IPv6 localhost (::1) and map it to IPv4 localhost
+        // (127.0.0.1)
         if ("::1".equals(ip)) {
             ip = "127.0.0.1";
         }
@@ -69,7 +72,6 @@ public class MoodController {
             ip = ip.substring(7);
         }
         return ip;
-     }
-     
+    }
 
 }

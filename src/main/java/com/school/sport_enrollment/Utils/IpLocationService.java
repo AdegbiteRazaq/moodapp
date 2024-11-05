@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class IpLocationService {
     private Map<String, String> ipLocationMap;
-    
+
     public IpLocationService() {
         ipLocationMap = new HashMap<>();
         // Pre-populate the HashMap with IP and location values
@@ -26,12 +26,13 @@ public class IpLocationService {
         ipLocationMap.put("67.22.7.127", "TC-CC");
         ipLocationMap.put("75.133.80.234", "EM-IT");
         ipLocationMap.put("68.188.137.81", "GA-PH");
-        ipLocationMap.put("127.0.0.1", "Razaqs-House");
-        
+        ipLocationMap.put("127.0.0.1", "Rukky's-House");
+
         // Add more IP-location pairs as needed
     }
+
     public String getLocationByIp(String ip) {
         // Check if the IP exists in the map
         return ipLocationMap.getOrDefault(ip, "EMAIL");
-    }    
+    }
 }
