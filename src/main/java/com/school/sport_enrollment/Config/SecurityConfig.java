@@ -64,8 +64,8 @@ public class SecurityConfig {
                                 "/swagger-ui.html",
 
                                 "/api/user/signin", // Public endpoints
-                                "/api/mood/create-mood"
-                        ).permitAll() // Allow listed endpoints without authentication
+                                "/api/mood/create-mood")
+                        .permitAll() // Allow listed endpoints without authentication
                         .anyRequest().authenticated() // All other endpoints require authentication
                 )
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // Make the app stateless

@@ -42,12 +42,22 @@ public class Mood {
     @Column(name = "name")
     private String name;
 
-    @Column(name ="department")
+    @Column(name = "intensity")
+    private Integer intensity;
+
+    public Integer getIntensity() {
+        return intensity;
+    }
+
+    public void setIntensity(Integer intensity) {
+        this.intensity = intensity;
+    }
+
+    @Column(name = "department")
     private String department;
 
     @Column(name = "comments")
     private String comments;
-
 
     @PrePersist
     protected void onCreate() {

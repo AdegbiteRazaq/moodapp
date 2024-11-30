@@ -15,11 +15,16 @@ import com.school.sport_enrollment.Utils.IpLocationService;
 public class MoodService {
 
     @Autowired
-    private MoodRepository repo; 
-    public MoodResponse createMood(MoodDto dto, String ipAddress){
+    private MoodRepository repo;
+
+    public MoodResponse createMood(MoodDto dto, String ipAddress) {
         try {
+            if (dto.getIntensity() < 1)
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Invalid intensity intensity must be greater than 0");
             Mood newMood = new Mood();
             newMood.setRating(dto.getRating());
+            newMood.setIntensity(dto.getIntensity());
             newMood.setLocation(new IpLocationService().getLocationByIp(ipAddress));
             Mood createdMood = repo.save(newMood);
             MoodResponse response = new MoodResponse(createdMood.getId(), HttpStatus.OK, "Mood successfully created");

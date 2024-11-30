@@ -105,21 +105,4 @@ public class User {
         this.userType = userType;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_sport_assignments", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "sportId"))
-    private List<Sport> sport;
-
-    public List<Sport> getSport() {
-        return sport;
-    }
-
-    public void setSport(List<Sport> sport) {
-        this.sport = sport;
-    }
-
-    public void removeSport(Sport sport) {
-        this.sport.remove(sport);
-        sport.getUsers().remove(this);
-    }
-
 }

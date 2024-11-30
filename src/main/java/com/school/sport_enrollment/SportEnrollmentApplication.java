@@ -41,7 +41,7 @@ public class SportEnrollmentApplication {
 								.addList("bearer-key", Collections.emptyList()))
 				.servers(Arrays.asList(
 
-						new ServerProp().url("http://localhost:8081").description("Local host URL")));
+						new ServerProp().url("http://localhost:8082").description("Local host URL")));
 
 	}
 }
